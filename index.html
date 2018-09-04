@@ -1,49 +1,270 @@
 <!doctype html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
 
-		<title>reveal.js</title>
+    <title>A Tale of Two Besties :: `pbcopy` and `pbpaste`</title>
 
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+    <meta name="description" content="A Tale of Two Besties :: `pbcopy` and `pbpaste`">
+    <meta name="author" content="Scott Pierce">
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
-		</div>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/pink.css" id="theme">
 
-		<script>
-			// More info about config & dependencies:
-			// - https://github.com/hakimel/reveal.js#configuration
-			// - https://github.com/hakimel/reveal.js#dependencies
-			Reveal.initialize({
-				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-				]
-			});
-		</script>
-	</body>
+    <!-- Theme used for syntax highlighting of code -->
+    <!-- <link rel="stylesheet" href="lib/css/zenburn.css"> -->
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+    <!--[if lt IE 9]>
+      <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="reveal">
+
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <section>
+          <h1>A Tale of Two Besties<br><small>pbcopy and pbpaste</small></h1>
+          <p>
+            <small>Created by <a href="https://ddrscott.github.io">Unicorns</a></small>
+          </p>
+        </section>
+
+        <section data-markdown>
+          <script type="text/template">
+            ## OS X High School
+
+            `pbcopy` and `pbpaste` were the new kids at OSX High School. All the
+            students picked on them because they could never do anything on
+            their own. Teachers thought they were weird for always playing with
+            pipes.
+          </script>
+        </section>
+
+        <section>
+          <h2>Blank Pages</h2>
+          <p>
+            On the first day after winter break, the school website was
+            rendering blank pages. No one could see their calendars or agendas
+            and the IT guy was stuck in Bermuda.
+          </p>
+        </section>
+
+        <section>
+          <h2>Ada</h2>
+          <p>
+            Ada, the STEM lab assistant, thought she'd better take a look. She
+            started by poking around in the browser's devtools. The responses
+            were all 200s, but there were some console errors.
+          </p>
+        </section>
+
+        <section>
+          <h2>Eureka!</h2>
+          <pre><code class="bigger">Can't read property 'event_dt' of undefined.</code></pre>
+          <p>
+            "Eureka!", Ada exclaimed. "The JSON response must have changed!"
+          </p>
+        </section>
+
+        <section data-markdown>
+          <script type="text/template">
+            ## Too Much Text 
+
+            She quickly went to the response tab and tried to preview the data,
+            but there was too much for her browser to handle. She copied the
+            response using CMD-a and CMD-c, and tried to paste it into her
+            editor. Alas, the editor kept freezing trying to format the huge
+            amount of text!
+          </script>
+        </section>
+
+        <section data-markdown>
+          <script type="text/template">
+            ## pbpaste
+`pbpaste` wandered by noticing the frustration in Ada's slouch.
+
+She came right up to Ada and said, "Um, I can put that JSON in a file for you. Would you mind if I took a shot at it?"
+
+"Go ahead", scoffed Ada in disbelief, "Let's see what you can do."
+
+          </script>
+        </section>
+
+        <section>
+          <pre><code class="bigger">
+pbpaste > data.json
+          </code></pre>
+          <br/>
+          <p>
+            Ada was shocked. "Wha, WHAT?! How'd you do that so fast?!" she exclaimed.
+          </p>
+        </section>
+
+        <section>
+          <p>
+            <code>pbpaste</code> responded, "It's because I have direct access
+            to the pasteboard. I can read it to any file or command. Watch this!
+            I can pipe my output to <code>jq</code> to pretty format the JSON. All without a bloated IDE slowing things down."
+          </p>
+          <pre><code class="bigger">
+pbpaste | jq . > formatted.json
+        </pre></code>
+          </script>
+        </section>
+
+        <section>
+          <h2>pbcopy</h2>
+          <p>
+            "I can also work with my bestie, <code>pbcopy</code>, to get the results back into the pasteboard!"
+
+            <code>pbpaste</code> yelled down the hallway, "<code>pbcopy</code> get over here! Let's show Ada our sweet moves!"
+          </p>
+          <pre><code class="bigger">
+pbpaste | jq . | pbcopy
+          </code></pre>
+        </section>
+
+        <section data-markdown>
+          <script type="text/template">
+            `pbcopy` sat back as if she'd just finished a big meal. She pushed up her glasses and added, "When I work together with `pbpaste`, you won't need to waste brain cells thinking of clever temporary file names!"
+          </script>
+        </section>
+
+        <section data-markdown>
+          <script type="text/template">
+            ## Rails Console
+
+Ada wanted to bring them down a notch. She stated, "This is great when I'm in shell, but I usually have all my data in Rails objects from within the console. Then what?"
+
+Leaning forward, `pbcopy` responded, "That's even better! When you're in IRB, try piping the data straight to me."
+
+          </script>
+        </section>
+        <section>
+          <h2>popen</h2>
+          <pre><code class="bigger">
+IO.popen('jq . | `pbcopy`', 'w') do |io|
+  io.write(items.to_json)
+end
+          </code></pre>
+          <h3>One Liner</h3>
+<pre><code class="bigger">
+IO.popen('jq . | `pbcopy`', 'w'){|❤️| ❤️ << items.to_json}
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Backticks</h2>
+          <p>"Furthermore", <code>pbcopy</code> says, "if you want to read from the clipboard, use backticks!"
+          </p>
+
+          <pre><code class="bigger">
+lines = `pbpaste`.split("\n")
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>But Wait There's More</h2>
+          <p> Together, they were so excited and said at the same time, "We have
+            this snippet in our <code>~/.pryrc</code> which makes working with us even easier!"
+          </p>
+          <pre><code class="bigger">def copy(data=nil)
+  IO.popen('pbcopy', 'w') do |io| 
+    if block_given?
+      yield io
+      puts "\e[34mCopied block!\e[0m"
+    elsif data
+      io << data.to_s
+      puts "\e[34mCopied data!\e[0m"
+    else
+      puts "\e[31mNothing to copy :(\e[0m"
+      puts "\e[34m  Try `copy { |c| c << data }`"
+      puts "   or `copy data`\e[0m"
+    end
+  end
+end</code></pre>
+        </section>
+
+        <section>
+          They continued, "Now, in Pry we can use <code>copy _</code> to send the last result to the pasteboard!"
+          <pre><code class="bigger">copy _</pre></code>
+        </section>
+
+
+        <section data-markdown>
+          <script type="text/template">
+            ## Typo
+In the midst of all the terminal output and pretty formatted JSON, `pbpaste` noticed an odd misspelling.
+
+```json
+{
+  posts: [...]
+  aggendas: [...]
+}
+```
+          </script>
+        </section>
+
+        <section data-markdown>
+          <script type="text/template">
+            ## Solved
+"This is what must be causing the undefined error! Isn't ajjenda spelled with 'j's?" `pbpaste` asked.
+
+`pbcopy` jumped in quickly, "Correction, it only has _one_ 'j'!"
+
+Ada, finally smiling, replied "You two were made for each other!"
+          </script>
+        </section>
+        <section>
+          <h1>The End</h1>
+        </section>
+      </div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+
+      // More info https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // More info https://github.com/hakimel/reveal.js#dependencies
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/search/search.js', async: true },
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+          { src: 'plugin/notes/notes.js', async: true }
+        ]
+      });
+
+    </script>
+
+  </body>
 </html>
