@@ -110,8 +110,8 @@ In the midst of all the terminal output and pretty formatted JSON, `pbpaste` not
 
 ```json
 {
-  posts: [...]
-  aggendas: [...]
+  posts: ["..."]
+  aggendas: ["..."]
 }
 ```
 
@@ -124,3 +124,12 @@ In the midst of all the terminal output and pretty formatted JSON, `pbpaste` not
 Ada, finally smiling, replied "You two were made for each other!"
 
 ## The End
+
+###### Production Tools
+
+- Vim
+- Reveal.js
+- http://paletton.com/#uid=75i0u0k5uTk00++29Z49uK7e4y1
+- https://www.canva.com/color-palette/
+- http://www.colorzilla.com/gradient-editor/
+- https://fonts.google.com/

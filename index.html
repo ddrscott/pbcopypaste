@@ -28,6 +28,16 @@
       document.getElementsByTagName( 'head' )[0].appendChild( link );
     </script>
 
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-50126719-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-50126719-1');
+    </script>
+
     <!--[if lt IE 9]>
       <script src="lib/js/html5shiv.js"></script>
     <![endif]-->
@@ -126,7 +136,7 @@ pbpaste > data.json
           <pre><code class="bigger">
 pbpaste | jq . > formatted.json
         </pre></code>
-          </script>
+        </script>
         </section>
 
         <section>
@@ -165,7 +175,7 @@ IO.popen('jq . | `pbcopy`', 'w') do |io|
 end
           </code></pre>
           <h3>One Liner</h3>
-<pre><code class="bigger">
+          <pre><code class="bigger">
 IO.popen('jq . | `pbcopy`', 'w'){|❤️| ❤️ << items.to_json}
           </code></pre>
         </section>
@@ -215,8 +225,8 @@ In the midst of all the terminal output and pretty formatted JSON, `pbpaste` not
 
 ```json
 {
-  posts: [...]
-  aggendas: [...]
+  posts: ["..."]
+  aggendas: ["..."]
 }
 ```
           </script>
@@ -232,8 +242,31 @@ In the midst of all the terminal output and pretty formatted JSON, `pbpaste` not
 Ada, finally smiling, replied "You two were made for each other!"
           </script>
         </section>
+        <section data-markdown>
+          <script type="text/template">
+            # The End
+
+            ###### Production Tools
+            - https://neovim.io/
+            - https://revealjs.com/
+            - http://paletton.com/#uid=75i0u0k5uTk00++29Z49uK7e4y1
+            - https://fonts.google.com/
+          </script>
+        </section>
+
         <section>
           <h1>The End</h1>
+          <h6>Production Tools</h6>
+          <small>
+            <ul>
+              <li>Vim</li>
+              <li>Reveal.js</li>
+              <li>http://paletton.com/#uid=75i0u0k5uTk00++29Z49uK7e4y1</li>
+              <li>https://www.canva.com/color-palette/</li>
+              <li>http://www.colorzilla.com/gradient-editor/</li>
+              <li>https://fonts.google.com/</li>
+            </ul>
+          <small>
         </section>
       </div>
     </div>
