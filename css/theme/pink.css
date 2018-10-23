@@ -298,4 +298,26 @@ body {
  *********************************************/
 @media print {
   .backgrounds {
-    background-color: #222; } }
+    background-color: #222;
+  }
+}
+
+.cover {
+  text-align: center !important;
+}
+
+.cover h2 {
+  margin-top: -0.2em;
+  margin-bottom: 0em;
+}
+
+.cover img {
+  text-align: center;
+  height: 55vh;
+  background: rgba(0, 0, 0, 0.08)
+}
+
+.reveal small,
+.cover small {
+  font-size: 0.5em;
+}

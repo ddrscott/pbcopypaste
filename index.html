@@ -65,33 +65,35 @@
           </p>
         </section>
 
-        <section data-markdown>
-          <script type="text/template">
-            ## OS X High School
-
-            `pbcopy` and `pbpaste` were the new kids at OSX High School. All the
-            students picked on them because they could never do anything on
+        <section class="cover">
+          <h2>OSX High School</h2>
+          <img src="images/osx_high.svg" alt="OSX High School" />
+          <small>
+            <code>pbcopy</code> and <code>pbpaste</code> were the new kids at OSX High School.
+            All the students picked on them because they could never do anything on
             their own. Teachers thought they were weird for always playing with
             pipes.
-          </script>
+          </small>
         </section>
 
-        <section>
+        <section class="cover">
           <h2>Blank Pages</h2>
-          <p>
+          <img src="images/website_down.svg" alt="Blank Pages" />
+          <small>
             On the first day after winter break, the school website was
             rendering blank pages. No one could see their calendars or agendas
             and the IT guy was stuck in Bermuda.
-          </p>
+          </small>
         </section>
 
-        <section>
+        <section class="cover">
           <h2>Ada</h2>
-          <p>
+          <img src="images/website_console.svg" alt="Web Console" />
+          <small>
             Ada, the STEM lab assistant, thought she'd better take a look. She
             started by poking around in the browser's devtools. The responses
             were all 200s, but there were some console errors.
-          </p>
+          </small>
         </section>
 
         <section>
@@ -102,28 +104,28 @@
           </p>
         </section>
 
-        <section data-markdown>
-          <script type="text/template">
-            ## Too Much Text 
-
+        <section class="cover">
+          <h2>Too Much Text </h2>
+          <img src="images/website_loading.svg" alt="Web Loading" />
+          <small>
             She quickly went to the response tab and tried to preview the data,
             but there was too much for her browser to handle. She copied the
             response using CMD-a and CMD-c, and tried to paste it into her
             editor. Alas, the editor kept freezing trying to format the huge
             amount of text!
-          </script>
+          </small>
         </section>
 
-        <section data-markdown>
-          <script type="text/template">
-            ## pbpaste
-`pbpaste` wandered by noticing the frustration in Ada's slouch.
-
-She came right up to Ada and said, "Um, I can put that JSON in a file for you. Would you mind if I took a shot at it?"
-
-"Go ahead", scoffed Ada in disbelief, "Let's see what you can do."
-
-          </script>
+        <section class="cover">
+          <h2>pbpaste</h2>
+          <img src="images/worried_teacher.svg" alt="Worried Teacher" />
+          <small>
+            <code>pbpaste</code> wandered by noticing the frustration in Ada's slouch.
+            <br/>
+            She came right up to Ada and said, "Um, I can put that JSON in a file for you. Would you mind if I took a shot at it?"
+            <br/>
+            "Go ahead", scoffed Ada in disbelief, "Let's see what you can do."
+          </small>
         </section>
 
         <section>
@@ -131,53 +133,60 @@ She came right up to Ada and said, "Um, I can put that JSON in a file for you. W
 pbpaste > data.json
           </code></pre>
           <br/>
-          <p>
+          <small>
             Ada was shocked. "Wha, WHAT?! How'd you do that so fast?!" she exclaimed.
-          </p>
+          </small>
         </section>
 
         <section>
-          <p>
+          <small>
             <code>pbpaste</code> responded, "It's because I have direct access
             to the pasteboard. I can read it to any file or command. Watch this!
-            I can pipe my output to <code>jq</code> to pretty format the JSON. All without a bloated IDE slowing things down."
-          </p>
+          </small>
           <pre><code class="bigger">
 pbpaste | jq . > formatted.json
-        </pre></code>
-        </script>
+          </pre></code>
+          <small>
+            I can pipe my output to <code>jq</code> to pretty format the JSON. All without a bloated IDE slowing things down."
+          </small>
+          <br/>
         </section>
 
-        <section>
-          <h2>pbcopy</h2>
-          <p>
-            "I can also work with my bestie, <code>pbcopy</code>, to get the results back into the pasteboard!"
-
+        <section class="cover">
+          <small> "I can also work with my bestie, <code>pbcopy</code>, to get the results back into the pasteboard!"
+          </small>
+          <img src="images/pbcopy_joins_in.svg" alt="pbcopy joins in" />
+          <small>
             <code>pbpaste</code> yelled down the hallway, "<code>pbcopy</code> get over here! Let's show Ada our sweet moves!"
-          </p>
+          </small>
+        </section>
+        <section>
+          <h2>Sweet Moves</h2>
           <pre><code class="bigger">
 pbpaste | jq . | pbcopy
           </code></pre>
         </section>
 
-        <section data-markdown>
-          <script type="text/template">
-            `pbcopy` sat back as if she'd just finished a big meal. She pushed up her glasses and added, "When I work together with `pbpaste`, you won't need to waste brain cells thinking of clever temporary file names!"
-          </script>
+        <section class="cover">
+          <img src="images/absorbed_data.svg" alt="absorbed" />
+          <small>
+            <code>pbcopy</code> sat back as if she'd just finished a big meal. She gloated, "When I work together with <code>pbpaste</code>, you won't need to waste brain cells thinking of clever temporary file names!"
+          </small>
         </section>
 
-        <section data-markdown>
-          <script type="text/template">
-            ## Rails Console
+        <section class="cover">
+          <h2>Rails Console</h2>
+          <img src="images/what_about_ruby.svg" alt="What about Ruby?" />
+          <small>
+            Ada wanted to bring them down a notch. She stated, "This is great when I'm in shell, but I usually have all my data in Rails objects from within the console. Then what?"
 
-Ada wanted to bring them down a notch. She stated, "This is great when I'm in shell, but I usually have all my data in Rails objects from within the console. Then what?"
-
-Leaning forward, `pbcopy` responded, "That's even better! When you're in IRB, try piping the data straight to me."
-
-          </script>
+          </small>
         </section>
         <section>
           <h2>popen</h2>
+          <small>
+            Leaning forward, <code>pbcopy</code> responded, "That's even better! When you're in IRB, try piping the data straight to me."
+          </small>
           <pre><code class="bigger">
 IO.popen('jq . | `pbcopy`', 'w') do |io|
   io.write(items.to_json)
@@ -191,8 +200,8 @@ IO.popen('jq . | `pbcopy`', 'w'){|❤️| ❤️ << items.to_json}
 
         <section>
           <h2>Backticks</h2>
-          <p>"Furthermore", <code>pbcopy</code> says, "if you want to read from the clipboard, use backticks!"
-          </p>
+          <small>"Furthermore", <code>pbcopy</code> says, "if you want to read from the clipboard, use backticks!"
+          </small>
 
           <pre><code class="bigger">
 lines = `pbpaste`.split("\n")
@@ -201,9 +210,9 @@ lines = `pbpaste`.split("\n")
 
         <section>
           <h2>But Wait There's More</h2>
-          <p> Together, they were so excited and said at the same time, "We have
+          <small> Together, they were so excited and said at the same time, "We have
             this snippet in our <code>~/.pryrc</code> which makes working with us even easier!"
-          </p>
+          </small>
           <pre><code class="bigger">def copy(data=nil)
   IO.popen('pbcopy', 'w') do |io| 
     if block_given?
@@ -218,44 +227,52 @@ lines = `pbpaste`.split("\n")
       puts "   or `copy data`\e[0m"
     end
   end
-end</code></pre>
+end
+</code></pre>
         </section>
 
         <section>
-          They continued, "Now, in Pry we can use <code>copy _</code> to send the last result to the pasteboard!"
+          <h2>Pry</h2>
+          <small>
+            They continued, "Now, in Pry we can use <code>copy _</code> to send the last result to the pasteboard!"
+          </small>
           <pre><code class="bigger">copy _</pre></code>
         </section>
 
 
-        <section data-markdown>
-          <script type="text/template">
-            ## Typo
-In the midst of all the terminal output and pretty formatted JSON, `pbpaste` noticed an odd misspelling.
-
-```json
+        <section>
+          <h2>Typo</h2>
+          <small>
+            In the midst of all the terminal output and pretty formatted JSON, <code>pbpaste</code> noticed an odd misspelling.
+          </small>
+          <pre><code>
 {
   posts: ["..."]
   aggendas: ["..."]
 }
-```
-          </script>
+          </code></pre>
         </section>
 
-        <section data-markdown>
-          <script type="text/template">
-            ## Solved
-"This is what must be causing the undefined error! Isn't ajjenda spelled with 'j's?" `pbpaste` asked.
-
-`pbcopy` jumped in quickly, "Correction, it only has _one_ 'j'!"
-
-Ada, finally smiling, replied "You two were made for each other!"
-          </script>
+        <section class="cover">
+          <h2>Solved</h2>
+          <small>
+            "This is what must be causing the undefined error! Isn't ajjenda spelled with 'j's?" <code>pbpaste</code> asked.
+            <br/>
+            <code>pbcopy</code> jumped in quickly, "Correction, it only has <em>one</em> 'j'!"
+          </small>
+          <img src="images/face_palm.svg" alt="Face palm" />
+        </section>
+        <section class="cover">
+          <h2>The End</h2>
+          <small>
+            Ada, finally smiling, replied "You two were made for each other!"
+          </small>
+          <img src="images/pbpaste_and_pbcopy.svg" alt="Together" />
         </section>
         <section data-markdown>
           <script type="text/template">
-            # The End
-
-            ###### Production Tools
+            ## Thanks!
+            - @brianmehrman
             - https://neovim.io/
             - https://revealjs.com/
             - http://paletton.com/#uid=75i0u0k5uTk00++29Z49uK7e4y1
