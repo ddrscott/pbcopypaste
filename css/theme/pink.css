@@ -313,11 +313,11 @@ body {
 
 .cover img {
   text-align: center;
-  height: 55vh;
+  height: 50vh;
   background: rgba(0, 0, 0, 0.08)
 }
 
 .reveal small,
 .cover small {
-  font-size: 0.5em;
+  /* font-size: 0.65em; */
 }
