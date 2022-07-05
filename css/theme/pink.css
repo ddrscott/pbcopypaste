@@ -313,7 +313,8 @@ body {
 
 .cover img {
   text-align: center;
-  height: 50vh;
+  max-height: 25vh;
+  width: 100vw;
   background: rgba(0, 0, 0, 0.08)
 }
 
